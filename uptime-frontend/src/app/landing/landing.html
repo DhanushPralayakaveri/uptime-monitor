@@ -1,0 +1,157 @@
+<div class="landing-wrapper">
+  <nav class="saas-navbar transparent">
+    <div class="brand">
+      <span class="icon">🛡️</span>
+      <span class="logo-text">Uptime Monitor</span>
+    </div>
+    <div class="nav-links">
+      <a href="#features">Features</a>
+      <a href="#architecture">Architecture</a>
+      <a href="#pricing">Pricing</a>
+    </div>
+    <div class="user-controls">
+      <button class="btn-ghost" routerLink="/login">Sign In</button>
+      <button class="btn-primary" routerLink="/login">Get Started</button>
+    </div>
+  </nav>
+
+  <header class="hero-section">
+    <div class="badge-pill">v1.0 Enterprise Edition</div>
+    <h1 class="hero-title">Infrastructure telemetry,<br><span class="highlight">simplified.</span></h1>
+    <p class="hero-subtitle">Monitor your mission-critical endpoints in real-time. Detect downtime before your users do with our secure, low-latency polling engine.</p>
+    <div class="hero-actions">
+      <button class="btn-primary large" routerLink="/login">Access Dashboard</button>
+      <a href="#architecture" class="btn-secondary large">View Architecture</a>
+    </div>
+  </header>
+
+  <div class="trust-banner">
+    <p>POWERED BY MODERN CLOUD INFRASTRUCTURE</p>
+    <div class="tech-logos">
+      <span>🌱 Spring Boot 3</span>
+      <span>🅰️ Angular 17</span>
+      <span>🐘 PostgreSQL</span>
+      <span>☁️ Neon Serverless</span>
+      <span>🔐 JWT Auth</span>
+    </div>
+  </div>
+
+  <section id="features" class="features-section">
+    <div class="section-header">
+      <h2>Enterprise-Grade Reliability</h2>
+      <p>Everything you need to maintain 99.99% uptime for your applications.</p>
+    </div>
+
+    <div class="grid">
+      <div class="feature-card">
+        <div class="feature-icon">⚡</div>
+        <h3>Real-Time Polling</h3>
+        <p>Continuous health checks running in a dedicated background worker, completely decoupled from the UI.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🔐</div>
+        <h3>JWT Security</h3>
+        <p>Stateless, token-based authentication backed by Spring Security and BCrypt password hashing.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">☁️</div>
+        <h3>Cloud Native</h3>
+        <p>Deployed on edge networks with a serverless PostgreSQL database for infinite scaling.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">⏱️</div>
+        <h3>Latency Tracking</h3>
+        <p>Millisecond-precision response time tracking to detect network degradation before complete failure.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">📈</div>
+        <h3>SLA Analytics</h3>
+        <p>Automatic calculation of historical uptime percentages to ensure you meet your service level agreements.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">📧</div>
+        <h3>Automated Alerts</h3>
+        <p>Instant email notifications dispatched the millisecond an endpoint fails a health check.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="architecture" class="architecture-section">
+    <div class="arch-container">
+      <div class="arch-text">
+        <h2>Built for Scale.</h2>
+        <p>A true decoupled microservice architecture. Our Angular frontend communicates exclusively through a secure REST API protected by a custom JWT filter. Meanwhile, an asynchronous Java thread pool continuously pings your targets across the globe, writing telemetry data directly to a high-availability Neon database.</p>
+      </div>
+      <div class="arch-visual">
+        <div class="arch-box">Angular Client</div>
+        <div class="arch-arrow">↔️ JWT ↔️</div>
+        <div class="arch-box server">Spring Boot API</div>
+        <div class="arch-arrow">⬇️ JPA ⬇️</div>
+        <div class="arch-box db">Neon Cloud DB</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="pricing" class="pricing-section">
+    <div class="section-header">
+      <h2>Transparent Pricing</h2>
+      <p>Enterprise features without the enterprise price tag.</p>
+    </div>
+    
+    <div class="pricing-card">
+      <div class="pricing-badge">Early Access</div>
+      <h3>Community Edition</h3>
+      <div class="price">$0<span> / forever</span></div>
+      <p class="pricing-desc">Currently 100% free to use for individual developers and small teams while in beta.</p>
+      
+      <ul class="pricing-features">
+        <li><span class="check">✔️</span> Unlimited Monitors</li>
+        <li><span class="check">✔️</span> 30-Second Polling Engine</li>
+        <li><span class="check">✔️</span> Email Downtime Alerts</li>
+        <li><span class="check">✔️</span> Historical SLA Analytics</li>
+      </ul>
+      
+      <button class="btn-primary large full-width" routerLink="/login">Start Monitoring for Free</button>
+    </div>
+  </section>
+
+  <section class="bottom-cta">
+    <h2>Ready to secure your uptime?</h2>
+    <p>Join developers monitoring millions of requests per day.</p>
+    <button class="btn-primary large" routerLink="/login">Deploy Your First Monitor</button>
+  </section>
+
+  <footer class="saas-footer">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <span class="icon">🛡️</span>
+        <span class="logo-text">Uptime Monitor SaaS</span>
+        <p class="footer-tagline">Open-source infrastructure monitoring.</p>
+      </div>
+      <div class="footer-links">
+        <div class="link-column">
+          <h4>Product</h4>
+          <a>Features</a>
+          <a>Integrations</a>
+          <a>Pricing</a>
+        </div>
+        <div class="link-column">
+          <h4>Resources</h4>
+          <a>Documentation</a>
+          <a>API Reference</a>
+          <a>Status Page</a>
+        </div>
+        <div class="link-column">
+          <h4>Company</h4>
+          <a>About</a>
+          <a>Blog</a>
+          <a href="https://github.com/DhanushPralayakaveri" target="_blank">GitHub</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Uptime Monitor SaaS. All rights reserved.</p>
+    </div>
+  </footer>
+</div>
+

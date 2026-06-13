@@ -1,0 +1,127 @@
+.login-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.login-card {
+  background: #1e2427;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  width: 100%;
+  max-width: 400px;
+  border: 1px solid #2d373a;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.logo {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.header h2 {
+  color: #ffffff;
+  margin: 0 0 5px 0;
+  font-weight: 600;
+}
+
+.header p {
+  color: #8b99a6;
+  margin: 0;
+  font-size: 14px;
+}
+
+.input-group {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  color: #8b99a6;
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* This fixes your white input fields */
+input {
+  padding: 12px 15px;
+  background-color: #161b1d; 
+  border: 1px solid #3c464a;
+  border-radius: 6px;
+  color: #ffffff;
+  font-size: 14px;
+  transition: all 0.2s;
+}
+
+input:focus {
+  outline: none;
+  border-color: #0055ff;
+  box-shadow: 0 0 0 2px rgba(0, 85, 255, 0.2);
+}
+
+button {
+  width: 100%;
+  background: #0055ff;
+  color: white;
+  border: none;
+  padding: 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 15px;
+  margin-top: 10px;
+  transition: background 0.2s;
+}
+
+button:hover { background: #004add; }
+button:disabled { background: #2d373a; color: #8b99a6; cursor: not-allowed; }
+
+.error-box {
+  background: #421818;
+  color: #f87171;
+  padding: 10px;
+  border-radius: 6px;
+  font-size: 13px;
+  margin-bottom: 15px;
+  text-align: center;
+  border: 1px solid #6b2626;
+}
+
+.success-box {
+  background: #103b22;
+  color: #4ade80;
+  padding: 10px;
+  border-radius: 6px;
+  font-size: 13px;
+  margin-bottom: 15px;
+  text-align: center;
+  border: 1px solid #1a5c35;
+}
+
+.toggle-mode {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.toggle-mode a {
+  color: #0055ff;
+  font-size: 13px;
+  cursor: pointer;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.toggle-mode a:hover {
+  text-decoration: underline;
+}

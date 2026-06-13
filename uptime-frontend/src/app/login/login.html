@@ -1,0 +1,39 @@
+<div class="login-wrapper">
+  <div class="login-card">
+    <div class="header">
+      <div class="logo">🛡️</div>
+      <h2>{{ isRegisterMode ? 'Create Account' : 'Uptime Monitor' }}</h2>
+      <p>{{ isRegisterMode ? 'Get started with enterprise telemetry' : 'Sign in to your enterprise dashboard' }}</p>
+    </div>
+
+    <form (ngSubmit)="onSubmit()">
+      <div class="input-group">
+        <label>Email Address</label>
+        <input type="email" [(ngModel)]="credentials.email" name="email" required placeholder="admin@enterprise.com">
+      </div>
+
+      <div class="input-group">
+        <label>Password</label>
+        <input type="password" [(ngModel)]="credentials.password" name="password" required placeholder="••••••••">
+      </div>
+
+      <div class="error-box" *ngIf="errorMessage">
+        {{ errorMessage }}
+      </div>
+      
+      <div class="success-box" *ngIf="successMessage">
+        {{ successMessage }}
+      </div>
+
+      <button type="submit" [disabled]="isLoading">
+        {{ isLoading ? 'Processing...' : (isRegisterMode ? 'Create Account' : 'Secure Login') }}
+      </button>
+    </form>
+
+    <div class="toggle-mode">
+      <a (click)="toggleMode()">
+        {{ isRegisterMode ? 'Already have an account? Sign In' : "Don't have an account? Sign Up" }}
+      </a>
+    </div>
+  </div>
+</div>

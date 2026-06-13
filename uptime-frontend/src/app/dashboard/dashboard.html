@@ -1,0 +1,72 @@
+<div class="dashboard-wrapper">
+  <nav class="saas-navbar">
+    <div class="brand">
+      <span class="icon">🛡️</span>
+      <span class="logo-text">Uptime Monitor</span>
+    </div>
+    <div class="user-controls">
+      <div class="avatar">👤</div>
+      <button class="btn-logout" (click)="logout()">Sign Out</button>
+    </div>
+  </nav>
+
+  <main class="dashboard-container">
+    <header class="page-header">
+      <h1>Infrastructure Dashboard</h1>
+      <p>Real-time telemetry and availability metrics.</p>
+    </header>
+
+    <div class="add-card">
+      <h3>Deploy New Monitor</h3>
+      <div class="input-group">
+        <input type="text" [(ngModel)]="newEndpoint.name" placeholder="Application Name (e.g., Auth API)">
+        <input type="text" [(ngModel)]="newEndpoint.url" placeholder="Target URL (e.g., https://api.enterprise.com)">
+        <button class="btn-primary" (click)="addEndpoint()" [disabled]="isDeploying" [class.deploying]="isDeploying">
+        {{ isDeploying ? 'Deploying...' : 'Deploy Monitor' }}
+        </button>
+      </div>
+    </div>
+
+    <div class="empty-state" *ngIf="endpoints.length === 0">
+      <div class="empty-icon">🌐</div>
+      <h3>No monitors deployed yet</h3>
+      <p>Add your first endpoint above to start tracking uptime and latency.</p>
+    </div>
+
+    <div class="grid" *ngIf="endpoints.length > 0">
+      <div class="card" *ngFor="let ep of endpoints">
+        
+        <div class="card-header">
+          <div class="endpoint-info">
+            <div class="status-dot" [ngClass]="{'up': ep.status === 'UP', 'down': ep.status === 'DOWN', 'pending': ep.status === 'PENDING'}"></div>
+            <h3 class="endpoint-name">{{ ep.name }}</h3>
+          </div>
+          <span class="badge" [ngClass]="{'up': ep.status === 'UP', 'down': ep.status === 'DOWN', 'pending': ep.status === 'PENDING'}">
+            {{ ep.status }}
+          </span>
+        </div>
+
+        <p class="url">{{ ep.url }}</p>
+        
+        <div class="telemetry-row">
+          <div class="stat-box">
+            <span class="stat-label">Response Time</span>
+            <span class="stat-value" [class.high-latency]="ep.responseTimeMs > 800">{{ ep.responseTimeMs || 0 }} ms</span>
+          </div>
+          <div class="stat-box">
+            <span class="stat-label">Uptime</span>
+            <span class="stat-value">{{ ep.uptimePercentage ? (ep.uptimePercentage | number:'1.0-2') : '100' }}%</span>
+          </div>
+        </div>
+
+        <div class="card-footer">
+          <p class="time">Last Checked: {{ ep.lastChecked ? (ep.lastChecked | date:'mediumTime') : 'Awaiting Engine...' }}</p>
+          <button class="btn-delete" (click)="deleteEndpoint(ep.id)" title="Stop monitoring this endpoint">
+            <span class="trash-icon">🗑️</span>
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </main>
+</div>
