@@ -1,4 +1,4 @@
-<img width="1890" height="833" alt="Screenshot 2026-06-11 161213" src="https://github.com/user-attachments/assets/2f7c22f6-42a3-4054-a2f7-d51b89beadcd" /># 🛡️ Uptime Monitor SaaS
+# 🛡️ Uptime Monitor SaaS
 
 ![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)
 ![Spring Boot](https://img.shields.io/badge/Spring_Boot-6DB33F?style=for-the-badge&logo=spring-boot&logoColor=white)
