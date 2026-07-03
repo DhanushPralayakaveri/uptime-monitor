@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiUrl: 'https://your-backend.example.com/api'
+  apiUrl: 'https://uptime-monitor-backend-mrt0.onrender.com'
 };
