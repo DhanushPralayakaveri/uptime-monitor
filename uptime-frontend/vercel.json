@@ -1,5 +1,5 @@
 {
-  "outputDirectory": "dist/uptime-frontend",
+  "outputDirectory": "dist/uptime-frontend/browser",
   "rewrites": [
     {
       "source": "/(.*)",
