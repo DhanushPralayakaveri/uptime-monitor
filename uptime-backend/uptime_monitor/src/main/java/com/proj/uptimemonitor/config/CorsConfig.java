@@ -14,11 +14,9 @@ public class CorsConfig {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/**")
-                    .allowedOrigins(
-                        "https://uptime-monitor-frontend-2hnfpg0vy-d-team3.vercel.app",
-                        "http://localhost:4200",
-                        "uptime-monitor-frontend-psi.vercel.app"
-                      
+                    .allowedOriginPatterns(
+                        "https://*.vercel.app",
+                        "http://localhost:4200"
                     )
                     .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
                     .allowedHeaders("*")
