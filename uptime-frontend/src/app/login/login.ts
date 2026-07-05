@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { AuthService } from '../auth/auth';
+import { environment } from '../../environments/environment'; // <-- 1. Added Import
 
 @Component({
   selector: 'app-login',
@@ -37,20 +38,18 @@ export class LoginComponent {
     this.successMessage = '';
 
     if (this.isRegisterMode) {
-      // ---> 1. CREATE THE ACCOUNT <---
-      this.http.post('http://localhost:8080/api/users/register', this.credentials, { responseType: 'text' }).subscribe({
+      // ---> 1. CREATE THE ACCOUNT (Now dynamically hitting Render/Localhost via Vercel config) <---
+      this.http.post(`${environment.apiUrl}/api/users/register`, this.credentials, { responseType: 'text' }).subscribe({
         next: () => {
           this.successMessage = 'Account created! Securing session...';
           
           // ---> 2. INSTANT AUTO-LOGIN <---
-          // We don't wait. We immediately hit the auth service with the credentials they just typed.
           this.authService.login(this.credentials).subscribe({
             next: () => {
               // Teleport directly to the dashboard!
               this.router.navigate(['/dashboard']);
             },
             error: () => {
-              // Fallback just in case the auto-login fails
               this.isLoading = false;
               this.errorMessage = 'Account created, but auto-login failed. Please sign in.';
               this.toggleMode();
