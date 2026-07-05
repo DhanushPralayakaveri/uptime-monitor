@@ -39,7 +39,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
   }
 
   loadEndpoints() {
-    this.http.get<any[]>(`${environment.apiUrl}/endpoints`)
+    this.http.get<any[]>(`${environment.apiUrl}/api/endpoints`)
       .subscribe({
         next: (data) => {
           this.endpoints = data;
@@ -67,7 +67,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
     this.endpoints.unshift(optimisticCard); 
     this.newEndpoint = { name: '', url: '' };
     
-    this.http.post(`${environment.apiUrl}/endpoints`, payload).subscribe({
+    this.http.post(`${environment.apiUrl}/api/endpoints`, payload).subscribe({
       next: () => {
         this.isDeploying = false;
         this.loadEndpoints(); // Re-syncs the grid
@@ -83,7 +83,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
   // Add this method below your addEndpoint() method
   deleteEndpoint(endpointId: number) {
     if (confirm('Are you sure you want to decommission this monitor? All historical telemetry will be lost.')) {
-      this.http.delete(`${environment.apiUrl}/endpoints/${endpointId}`, { responseType: 'text' }).subscribe({
+      this.http.delete(`${environment.apiUrl}/api/endpoints/${endpointId}`, { responseType: 'text' }).subscribe({
         next: () => {
           // Optimistically remove it from the UI for a snappy feel
           this.endpoints = this.endpoints.filter(ep => ep.id !== endpointId);
