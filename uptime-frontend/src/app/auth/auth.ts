@@ -7,7 +7,7 @@ import { environment } from '../../environments/environment';
   providedIn: 'root'
 })
 export class AuthService {
-  private apiUrl = `${environment.apiUrl}/auth`;
+  private apiUrl = `${environment.apiUrl}/api/auth`;
   
   // This keeps track of whether the user is logged in so the UI can update instantly
   private loggedIn = new BehaviorSubject<boolean>(this.hasToken());
