@@ -56,7 +56,9 @@ public class SecurityConfig {
         CorsConfiguration configuration = new CorsConfiguration();
         configuration.setAllowedOriginPatterns(List.of(
             "http://localhost:4200",
-            "https://*.vercel.app"
+            "https://*.vercel.app",
+            "https://uptime-monitor-frontend-bbnn19380-d-team3.vercel.app",
+            "uptime-monitor-frontend-psi.vercel.app"
         ));
         configuration.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS"));
         configuration.setAllowedHeaders(List.of("*"));
