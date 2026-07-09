@@ -1,6 +1,19 @@
-# UptimeFrontend
+# 🖥️ Uptime Monitor - Frontend
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.13.
+This directory contains the user interface for the Uptime Monitor application, built using the Angular framework.
+
+## 🛠️ Features
+
+* **Interactive Dashboard:** View real-time endpoint status, tracking metrics, and historical availability.
+* **Service Management:** Interface to add, update, and remove monitored infrastructure endpoints.
+* **User Authentication:** Secure login and registration flows to access personalized monitoring data.
+
+## 🚀 Local Development
+
+### 1. Install Dependencies
+Make sure you have Node.js installed, then run the following command to install the project dependencies:
+```bash
+npm install
 
 ## Development server
 
@@ -12,19 +25,6 @@ ng serve
 
 Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
 
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
 
 ## Building
 
